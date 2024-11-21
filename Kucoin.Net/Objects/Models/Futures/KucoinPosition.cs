@@ -179,23 +179,27 @@ namespace Kucoin.Net.Objects.Models.Futures
         /// Risk limit level
         /// </summary>
         public int? RiskLimitLevel { get; set; }
+        /// <summary>
+        /// Position Side
+        /// </summary>
+        public string positionSide { get; set; } = string.Empty;
     }
 
     /// <summary>
     /// Position info
     /// </summary>
-    public class KucoinPosition: KucoinPositionBase
+    public class KucoinPosition : KucoinPositionBase
     {
         /// <summary>
         /// Position id
         /// </summary>
-        public string Id { get; set; } = string.Empty;        
+        public string Id { get; set; } = string.Empty;
     }
 
     /// <summary>
     /// Position update
     /// </summary>
-    public class KucoinPositionUpdate: KucoinPositionBase
+    public class KucoinPositionUpdate : KucoinPositionBase
     {
         /// <summary>
         /// Change reason

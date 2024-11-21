@@ -52,6 +52,7 @@ namespace Kucoin.Net.Clients.FuturesApi
             bool? closeOrder = null,
             bool? forceHold = null,
             string? clientOrderId = null,
+            string? marginMode = null,
             CancellationToken ct = default)
         {
             var parameters = new Dictionary<string, object>();
@@ -74,6 +75,8 @@ namespace Kucoin.Net.Clients.FuturesApi
             parameters.AddOptionalParameter("hidden", hidden?.ToString());
             parameters.AddOptionalParameter("iceberg", iceberg);
             parameters.AddOptionalParameter("visibleSize", visibleSize?.ToString());
+            parameters.AddOptionalParameter("marginMode", marginMode);
+
 
             return await _baseClient.Execute<KucoinNewOrder>(_baseClient.GetUri("orders", 1), HttpMethod.Post, ct, parameters, true).ConfigureAwait(false);
         }

@@ -60,6 +60,7 @@ namespace Kucoin.Net.Interfaces.Clients.FuturesApi
             bool? closeOrder = null,
             bool? forceHold = null,
             string? clientOrderId = null,
+            string? marginMode = null,
             CancellationToken ct = default);
 
         /// <summary>
